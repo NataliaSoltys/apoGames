@@ -1,0 +1,11 @@
+.headerContainer{
+    display: flex;
+}
+
+.headerLogo{
+    height: 20vmin;
+}
+
+.headerContainer h2{
+    flex-grow: 1;
+}
