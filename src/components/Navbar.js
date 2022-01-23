@@ -1,27 +1,31 @@
-import React, { Component } from "react";
-import logo from "../images/logo.png";
-import "./Navbar.css";
-import bootstrap from "bootstrap";
+import React from "react";
+import { Component } from "react/cjs/react.production.min";
+import logo from "../images/logo.png"
 
-class Navbar extends Component {
+class Welcome extends Component {
     render() {
         return (
-
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">logo</a>
+                    <a href="#">
+                    <img src={logo} height={90} href="#" alt="Logo" />
+                    </a>
+                    {/* <a class="navbar-brand" href="#">Logo</a> */}
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Most awarded</a>
+                                <a class="nav-link active" aria-current="page" href="#">Awarded</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Most awaited</a>
+                                <a class="nav-link active" aria-current="page" href="#">Awaided</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Ranking</a>
+                            </li>
+                            {/* <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Ranking
                                 </a>
@@ -31,22 +35,15 @@ class Navbar extends Component {
                                     <li><hr class="dropdown-divider"></hr></li>
                                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                                 </ul>
-                            </li>
+                            </li> */}
                             
                         </ul>
+            
                     </div>
                 </div>
-
             </nav>
-            // <div className="headerContainer">
-            //     <img src={logo} className="headerLogo" alt="logoApoGames" />
-            //     <h2>apoGames</h2>
-            //     <h5>{"Most Appreciated" + ' '}</h5>
-            //     <h4>Most Awaited</h4>
-            //     <h5>Your profile</h5>
-            // </div>
         );
     }
 }
 
-export default Navbar;
+export default Welcome;
