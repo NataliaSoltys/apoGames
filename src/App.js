@@ -1,12 +1,16 @@
 import './App.css';
-import Header from './components/Header';
+import { MostAwarded } from './components/MostAwarded';
+import Navbar from './components/Navbar';
+import Welcome from './components/Welcome';
 
 function App() {
   return (
     <div className="App">
      
-     <Header/>
-
+     <Navbar/>
+    <Welcome firstName="Alexander"/>
+    <MostAwarded/>
+    
     </div>
   );
 }
