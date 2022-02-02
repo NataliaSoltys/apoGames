@@ -21,7 +21,7 @@ export default class MostAwaited extends Component {
         const { games } = this.props;
         return (
             <div>
-                <Grid container spacing={2} columns={4} sx={{p: '50px'}}>
+                <Grid container spacing={2} columns={4} sx={{ p: '50px' }}>
                     {games.getMostAwaited().map(g =>
                         <Grid item xs={1} sm={1} md={1} key={g.id}>
                             <Card>
@@ -34,21 +34,21 @@ export default class MostAwaited extends Component {
                                     />
                                     <CardContent>
                                         <Typography gutterBottom variant="h5" component="div" sx={{
-                                                display: '-webkit-box',
-                                                overflow: 'hidden',
-                                                WebkitBoxOrient: 'vertical',
-                                                WebkitLineClamp: 1,
-                                            }}>
+                                            display: '-webkit-box',
+                                            overflow: 'hidden',
+                                            WebkitBoxOrient: 'vertical',
+                                            WebkitLineClamp: 1,
+                                        }}>
                                             {g.name}
                                         </Typography>
                                         <Typography sx={{
-                                                display: '-webkit-box',
-                                                overflow: 'hidden',
-                                                WebkitBoxOrient: 'vertical',
-                                                WebkitLineClamp: 3,
-                                            }}
+                                            display: '-webkit-box',
+                                            overflow: 'hidden',
+                                            WebkitBoxOrient: 'vertical',
+                                            WebkitLineClamp: 3,
+                                        }}
                                             variant="body1" color="text.secondary">
-                                                {g.shortDescription}
+                                            {g.shortDescription}
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>

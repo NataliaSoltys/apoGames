@@ -20,4 +20,8 @@ export default class GamesDatabase
     getMostAwaited(){
         return this.games.filter(g => new Date(g.releaseDate) > new Date());
     }
+
+    getMostAwarded(){
+        return this.games.filter(g => g.plebiscite != 'none');
+    }
 }

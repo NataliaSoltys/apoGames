@@ -32,7 +32,7 @@ export default class App extends Component {
           <Navbar/>
           <Routes>
               <Route path='/' element={<Welcome/>}/>
-              <Route path='/mostAwarded' element={<MostAwarded/>}/>
+              <Route path='/mostAwarded' element={<MostAwarded games={this.state.database}/>}/>
               <Route path='/mostAwaited' element={<MostAwaited games={this.state.database}/>}/>
               <Route path='/ranking' element={<Ranking/>}/>
               <Route path='/game/:gameId' element={<Game/>}/>
