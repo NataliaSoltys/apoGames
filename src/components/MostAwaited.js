@@ -41,6 +41,15 @@ export default class MostAwaited extends Component {
                                         }}>
                                             {g.name}
                                         </Typography>
+                                        <Typography gutterBottom variant="h5" component="div" sx={{
+                                            display: '-webkit-box',
+                                            overflow: 'hidden',
+                                            WebkitBoxOrient: 'vertical',
+                                            WebkitLineClamp: 1,
+                                            fontSize: '12px'
+                                        }}>
+                                           release date:{g.releaseDate}
+                                        </Typography>
                                         <Typography sx={{
                                             display: '-webkit-box',
                                             overflow: 'hidden',
@@ -48,7 +57,7 @@ export default class MostAwaited extends Component {
                                             WebkitLineClamp: 3,
                                         }}
                                             variant="body1" color="text.secondary">
-                                            {g.shortDescription}
+                                            {g.description}
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>

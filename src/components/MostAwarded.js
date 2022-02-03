@@ -33,6 +33,16 @@ export default class MostAwarded extends Component {
                                         alt={g.img}
                                     />
                                     <CardContent>
+                                        
+                                        <Typography sx={{
+                                            display: '-webkit-box',
+                                            overflow: 'hidden',
+                                            WebkitBoxOrient: 'vertical',
+                                            WebkitLineClamp: 1,
+                                            fontSize: '30px'
+                                        }}>
+                                            {g.title}
+                                        </Typography>
                                         <Typography gutterBottom variant="h5" component="div" sx={{
                                             display: '-webkit-box',
                                             overflow: 'hidden',
@@ -45,10 +55,10 @@ export default class MostAwarded extends Component {
                                             display: '-webkit-box',
                                             overflow: 'hidden',
                                             WebkitBoxOrient: 'vertical',
-                                            WebkitLineClamp: 3,
+                                            WebkitLineClamp: 2,
                                         }}
                                             variant="body1" color="text.secondary">
-                                            {g.shortDescription}
+                                            {g.description}
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>

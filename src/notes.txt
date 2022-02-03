@@ -1,1 +1,1 @@
-1. video why szare, nie repeatuje sie
+1. data z jsona do carda brzydka i sie nie czyta
