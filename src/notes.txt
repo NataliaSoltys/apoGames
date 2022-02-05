@@ -1,1 +1,7 @@
 1. footer za wysoko
+
+
+eventy:
+1. onClose
+2. 
+3.

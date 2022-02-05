@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Footer.css'
+import Form from './Form.css'
 
 const Footer = () => {
 
@@ -11,7 +12,7 @@ const Footer = () => {
             <div className="container p-4">
 
                 <div className="row" >
-
+                    {/* < Form/> */}
                     <div className="col-lg-6 col-md-10 mb-4 mb-md-0">
                         <h5 className="text-uppercase">ApoGames</h5>
 
