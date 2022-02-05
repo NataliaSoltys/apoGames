@@ -33,15 +33,7 @@ export default class Ranking extends Component {
                                     />
                                     <CardContent>
                                         
-                                        <Typography sx={{
-                                            display: '-webkit-box',
-                                            overflow: 'hidden',
-                                            WebkitBoxOrient: 'vertical',
-                                            WebkitLineClamp: 1,
-                                            fontSize: '30px'
-                                        }}>
-                                            {g.title}
-                                        </Typography>
+                                        
                                         <Typography gutterBottom variant="h5" component="div" sx={{
                                             display: '-webkit-box',
                                             overflow: 'hidden',
@@ -50,6 +42,17 @@ export default class Ranking extends Component {
                                         }}>
                                             {g.name}
                                         </Typography>
+
+                                        <Typography sx={{
+                                            display: '-webkit-box',
+                                            overflow: 'hidden',
+                                            WebkitBoxOrient: 'vertical',
+                                            WebkitLineClamp: 1,
+                                            fontSize: '30px'
+                                        }}>
+                                            score: {g.ranking}
+                                        </Typography>
+
                                         <Typography sx={{
                                             display: '-webkit-box',
                                             overflow: 'hidden',
