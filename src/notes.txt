@@ -1,1 +1,1 @@
-1. data z jsona do carda brzydka i sie nie czyta
+1. footer za wysoko

@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
 import Grid from '@mui/material/Grid';
 import { Link } from "react-router-dom";
+import './MostAwaited.css'
 
 export default class MostAwaited extends Component {
 
@@ -21,6 +22,7 @@ export default class MostAwaited extends Component {
         const { games } = this.props;
         return (
             <div>
+                <h2 className="gamesAwaited">Games we look forward to the most:</h2>
                 <Grid container spacing={2} columns={4} sx={{ p: '50px' }}>
                     {games.getMostAwaited().map(g =>
                         <Grid item xs={1} sm={1} md={1} key={g.id}>

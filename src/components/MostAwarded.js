@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Favorite from '@mui/icons-material/Favorite';
-import Container from '@mui/material/Container';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardMedia from '@mui/material/CardMedia';
@@ -21,6 +19,7 @@ export default class MostAwarded extends Component {
         const { games } = this.props;
         return (
             <div>
+                <h2 className="gamesAwards">Games that have won top awards:</h2>
                 <Grid container spacing={2} columns={4} sx={{ p: '50px' }}>
                     {games.getMostAwarded().map(g =>
                         <Grid item xs={1} sm={1} md={1} key={g.id}>

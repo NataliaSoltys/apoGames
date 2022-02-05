@@ -16,6 +16,13 @@ export default class GamesDatabase
         return this.games.filter(g => g.id == idk);
     }
 
+    getGamesRanking(){
+        return this.games.sort(
+            function(a, b){
+            return b.ranking - a.ranking
+        });
+    }
+
     changeRank(id, vote){
         let game = this.games.find(e => e.id === id);
         game.ranking = vote;
