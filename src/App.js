@@ -13,6 +13,7 @@ import Game from './components/Game.js';
 import GamesDatabase from "./database/gamesDatabase.js"
 import Form from './components/Form.js'
 import COuter from './components/COuter.js'
+import GameList from './components/GameList.js'
 
 const darkTheme = createTheme({
   palette: {
@@ -37,13 +38,13 @@ export default class App extends Component {
               <Route path='/mostAwarded' element={<MostAwarded games={this.state.database}/>}/>
               <Route path='/mostAwaited' element={<MostAwaited games={this.state.database}/>}/>
               <Route path='/ranking' element={<Ranking games={this.state.database}/>}/>
+              <Route path='/gameList' element={<GameList/>}/>
               <Route path='/game/:gameId' element={<Game games={this.state.database}/>}/>
           </Routes>
          
           <COuter/>
-          <Form/>
           <Footer/>
-      </ThemeProvider>
+      </ThemeProvider >
     );
   } 
   

@@ -3,8 +3,50 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './Footer.css'
 import Form from './Form.css'
 
-const Footer = () => {
+function  mouseEnter(){
+    console.log('mouse enter')
+    
+}
 
+function pointerDown(){
+    console.log('pointer is down')
+    
+}
+
+function  mouseLeave(){
+    console.log('mouse leave')
+    
+}
+
+function pointerMove(){
+    console.log('pointer move')
+}
+
+function pointerUp(){
+    console.log('pointer up')
+}
+
+function pointerCancel(){
+    console.log('pointer cancel')
+}
+
+function pointerCapture(){
+    console.log('pointer capture')
+}
+
+function handleClickViaCapturing(){
+    alert("Click me, and my parent's `onClickCapture` will fire *first*! ")
+}
+function transitionEnd(){
+    console.log('End of event.')
+}
+
+function underline(){
+    this.style={paddingLeft: 13, textDecoration: 'none'}
+}
+
+const Footer = () => {
+   
     return (
 
         <footer className="bg- text-white" >
@@ -25,16 +67,16 @@ const Footer = () => {
                         <h5 className="text-uppercase">Find us:</h5>
 
                         <ul className="list-unstyled mb-0">
-                            <li>
+                            <li onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
                                 <a href="#!" className="text-white">Facebook</a>
                             </li>
-                            <li>
+                            <li onPointerDown={pointerDown}>
                                 <a href="#!" className="text-white">Twitter</a>
                             </li>
-                            <li>
+                            <li onPointerMove={pointerMove}>
                                 <a href="#!" className="text-white">YouTube</a>
                             </li>
-                            <li>
+                            <li onPointerUp={pointerUp}>
                                 <a href="#!" className="text-white">Instagram</a>
                             </li>
                         </ul>
@@ -43,17 +85,17 @@ const Footer = () => {
                     <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
                         <h5 className="text-uppercase mb-0">Additional settings</h5>
 
-                        <ul className="list-unstyled">
-                            <li>
+                        <ul className="list-unstyled" href={underline}>
+                            <li onPointerCancel={pointerCancel}>
                                 <a href="#!" className="text-white">Mobile version</a>
                             </li>
-                            <li>
+                            <li onGotPointerCapture={pointerCapture}>
                                 <a href="#!" className="text-white">Get news alert</a>
                             </li>
-                            <li>
+                            <li onClickCapture={handleClickViaCapturing}>
                                 <a href="#!" className="text-white">Contact</a>
                             </li>
-                            <li>
+                            <li onTransitionEnd={transitionEnd}>
                                 <a href="#!" className="text-white">On smart speakers</a>
                             </li>
                         </ul>

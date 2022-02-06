@@ -24,6 +24,17 @@ class Game extends Component {
         super();
     }
 
+    imagestore()
+    {
+    const imgUrls=this.props.apikeys;
+    const objarr = Object.values(imgUrls);
+    this.setState({
+        imagesarray: objarr
+    });
+    }
+
+    
+
     render() {
         const { games } = this.props;
         var id = this.props.params.gameId;
@@ -38,8 +49,13 @@ class Game extends Component {
                                 <CardMedia
                                     component="img"
                                     height="330"
-                                    image={g.img}
+                                    src={`/${g.img}`}   //`"div${item.id}"`
                                     alt={g.img}
+                                    onLoad= {() => this.imagestore()}
+                                    onError={({ currentTarget }) => {
+                                        currentTarget.onerror = null; // prevents looping
+                                        currentTarget.src=`/${g.img}`
+                                      }}
                                 />
                                 <CardContent>
                                     
@@ -57,7 +73,7 @@ class Game extends Component {
                                         overflow: 'hidden',
                                         WebkitBoxOrient: 'vertical',
                                         WebkitLineClamp: 1,
-                                    }}>
+                                    }} >
                                         {g.name}
                                     </Typography>
                                     <Typography sx={{

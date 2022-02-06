@@ -1,56 +1,83 @@
-import React, { Component } from 'react' 
-import Clnner from './CInner' 
+import React, { Component } from 'react'
+import Clnner from './CInner'
 import './COuter.css'
 import styl from './COuter.module.css'
+import GameList from './GameList.js'
 
-export default class COuter extends Component { 
+export default class COuter extends GameList {
 
-constructor(props) { 
-    super(props) 
-    this.state = { 
-        st: "Poczatek" 
-    } 
-    console.log('COuter - konstruktor'); 
-} 
+    constructor(props) {
+        super(props)
+        this.state = {
+            st: "Poczatek"
+        }
 
-static getDerivedStateFromProps(props, state){ 
-    console.log("COuter - getDerivedStateFromProps()") 
-    return null 
-} 
+        console.log('whole div form has been called')
 
-componentDidMount(){ 
-    console.log("COuter - componentDidMount()") 
-} 
+        this.handlerCopy = this.handlerCopy.bind(this);
+    }
+
+    handlerCopy(e) {
+        console.log(e.target.innerHTML);
+        e.preventDefault();
+        e.nativeEvent.stopImmediatePropagation();
+
+        this.setState(prevState => ({
+            counter: prevState.counter + 1
+        }));
+
+        alert('Don\'t copy it!');
+    }
+
+    compositionEvent() {
+        console.log("composition events are working")
+    }
+
+    submit(){
+        alert("thanks for submition")
+    }
+
+    static getDerivedStateFromProps(props, state) {
+        console.log("Outer - get Derived State From Props")
+        return null
+    }
+
+    componentDidMount() {
+        console.log("Outer - component has mounted")
+    }
 
 
-render() { 
-    console.log("COuter - render()") 
-    return ( 
-    <div className='bgClassNormal'> 
-        <h2 className={styl.bgClassModule}>Komponent zewnętrzny</h2> 
-        <button onClick={this.stateChange}>Zmiana stanu</button> 
-        <Clnner/> 
-        </div> 
-    ) 
-} 
+    render(onClick, onToggle) {
+        console.log("rendering outer form component...")
+        console.log(this.props)
 
-stateChange = () => { 
-    this.setState({st: "Klik"}) 
-} 
+        return (
+            <div className='bgClassNormal' onCopy={this.handlerCopy} onCompositionStart={this.compositionEvent} onCompositionEnd={this.compositionEvent} onCompositionUpdate={this.compositionEvent} >
+                <h2 className={styl.bgClassModule}>Join newsletter</h2>
+                <Clnner />
+                <button onClick={this.stateChange} onToggle={onToggle ? onToggle : null} onSubmit={this.submit}>I'm in!</button>
+                <p>{this.props.name}</p>
+            </div>
+        )
+    }
 
-shouldComponentUpdate(){ 
-    console.log("COuter - shouldComponentUpdate()") 
-    return true
-} 
+    stateChange = () => {
+        this.setState({ st: "Newsletter done" })
+    }
 
-getSnapshotBeforeUpdate(pprops, pstate){ 
-    console.log("COuter - getSnapshotBeforeUpdate()") 
-    return null 
-} 
+    stateChange = () => {
+        this.setState({ st: "State done" })
+    }
 
-componentDidUpdate(){ 
-    console.log("COuter - componentDidUpdate()") 
-} 
+
+    getSnapshotBeforeUpdate(pprops, pstate) {
+        console.log("This is outer snapshot before update")
+        return null
+    }
+
+    componentDidUpdate() {
+        console.log("Outer has updated")
+    }
 
 
 }

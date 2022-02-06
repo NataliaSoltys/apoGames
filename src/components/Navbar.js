@@ -22,7 +22,8 @@ export default class Navbar extends Component {
             navBarOptions: [
                 {name: "Awarded", link: "/mostAwarded"},
                 {name: "Awaited", link: "/mostAwaited"},
-                {name: "Ranking", link: "/ranking"}
+                {name: "Ranking", link: "/ranking"},
+                {name: "GameList", link: "/gameList"}
             ]
         }
     }
@@ -77,6 +78,7 @@ export default class Navbar extends Component {
                                         <Typography textAlign="center">{setting}</Typography>
                                     </MenuItem>
                                 ))}
+                                
                             </Menu>
                         </Box>
                     </Toolbar>
