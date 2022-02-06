@@ -12,6 +12,7 @@ import Footer from './components/Footer.js';
 import Game from './components/Game.js';
 import GamesDatabase from "./database/gamesDatabase.js"
 import Form from './components/Form.js'
+import COuter from './components/COuter.js'
 
 const darkTheme = createTheme({
   palette: {
@@ -39,6 +40,7 @@ export default class App extends Component {
               <Route path='/game/:gameId' element={<Game games={this.state.database}/>}/>
           </Routes>
          
+          <COuter/>
           <Form/>
           <Footer/>
       </ThemeProvider>
